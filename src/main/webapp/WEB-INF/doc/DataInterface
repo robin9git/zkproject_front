@@ -1,0 +1,67 @@
+IP前缀
+http://192.168.1.205:8280/
+
+//logo
+/zky/zkLogo/getZkLogo //获得logo————————完成
+
+//友情链接
+/zky/zkLinkInfo/selectZkLinkInfoList  //获得友情链接列表————————完成
+
+//首页-获取底部工厂list---升序排列
+/zky/zkZhFactory/getFactoryList?lang=en  //获取底部工厂list  参数说明：获取中文 lang=zh ; 获取英文 lang = en. 默认获取中文————————完成
+
+//首页-获取首页-工程服务字段及内容---
+/zky/zkProService/getZkProserviceList?lang=en  //获取底部工厂list  参数说明：获取中文 lang=zh ; 获取英文 lang = en. 默认获取中文
+
+//首页banner----中英文公用
+/zky/zkBanner/getZkBannerList?lang=en //获得banner显示列表    参数说明：获取中文 lang=zh ; 获取英文 lang = en. 默认获取中文————————正在做
+
+//菜单接口
+/zky/zkMenu/getHeadMenuList   //获取所有首部菜单————————完成
+/zky/zkMenu/getFootMenuList   //获取所有底部菜单————————完成
+
+//公司信息---联系我们
+/zky/zkCompInfo/selectZkCompInfo  //获得公司信息 ————————完成
+
+//获取首页3条图片新闻-3条行业动态
+新闻menuId:4028814d52871d3d015287a3546b0031
+行业动态menuId:4028814d52871d3d015287a37feb0033
+/zky/zkContentInfo/getZkContentInfoList3ById?menuId=1 // 根据menuId获得3条图片内容 
+
+//内容
+/zky/zkContentInfo/selectZkContentInfoById?id=1 // 根据编号获得内容详情
+/zky/zkContentInfo/selectContentByMenuId?menuId=1 //根据菜单ID查询内容列表----一般使用这个     分页参数：&pageCurrent=1&eachPageSize=5
+
+/zky/zkMenu/selectHeadMenuByParentId?parentId=1 //根据父菜单ID查询首部菜单列表
+/zky/zkMenu/selectOtherMenuListByParentId?parentId=1 //根据父菜单ID查询其他菜单
+/zky/zkContentInfo/selectContentForLevel1ByMenuId?menuId=1 // 根据菜单ID查询一级内容列表 
+/zky/zkContentInfo/selectContentForLevel2ByMenuId?menuId=1 // 根据菜单ID查询二级内容列表
+/zky/zkContentInfo/selectContentForLevel3ByMenuId?menuId=1 // 根据菜单ID查询三级内容列表 
+
+//根据id获取项目展示实体list
+/zky/zkZhFactory/getFactoryByMenuId?menuId=4028814d52871d3d015287bd5e23005d&lang=zh
+
+//获取--首页-项目进展
+http://192.168.1.205:8180//zky/zkZhFactory/getProDebreifing?lang=zh
+
+--------------------------------------------------------------------------------------------------------------------
+---------------------------------------------上边的已OK，下边待测---------------------------------------------------------
+--------------------------------------------------------------------------------------------------------------------
+
+//招聘信息
+/zky/zkRecruitInfo/selectZkRecruitInfoList //获得招聘信息列表------------------------------TODO
+
+//文件
+/zky/zkAttachment/getIndexVideoList //获取首页视频列表--------------工程公司删除
+/zky/zkAttachment/getIndexMenu1List //获取合成油报列表 --------------工程公司删除
+/zky/zkAttachment/getIndexMenu2List //获取合成油世界列表 --------------工程公司删除
+/zky/zkAttachment/getIndexMenu3List //获取文章及出版物列表 --------------工程公司删除
+/zky/zkAttachment/getIndexMenu5List //获取煤海油金列表 --------------工程公司删除
+
+//内容
+/zky/zkContentInfo/selectZkContentInfoById?id=1 // 根据编号获得内容详情-------------OK
+/zky/zkContentInfo/selectIndexNewsContent // 查询首页最新动态 -------------------------------工程公司删除
+/zky/zkContentInfo/selectContentByMenuId?menuId=1 //根据菜单ID查询内容列表-------------OK
+/zky/zkContentInfo/selectContentForLevel1ByMenuId?menuId=1 // 根据菜单ID查询一级内容列表 -------------OK
+/zky/zkContentInfo/selectContentForLevel2ByMenuId?menuId=1 // 根据菜单ID查询二级内容列表-------------OK
+/zky/zkContentInfo/selectContentForLevel3ByMenuId?menuId=1 // 根据菜单ID查询三级内容列表 -------------OK

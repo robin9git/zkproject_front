@@ -1,0 +1,17 @@
+/*.gy_header_line3 .gy_text{left: -277px;}*/
+.body{width: 1180px; margin: 0 auto; margin-top: 40px;}
+.body_title{padding: 9px 0; border-top: 1px solid #f39700; border-bottom: 1px solid #f39700; height: 47px;}
+.body_title_in{background-color: #013a58; height: 47px; overflow: hidden;}
+.body_title_in p{float: left;}
+.body_title_left{border-bottom: 47px solid #f39700; border-left: 47px solid #013a58; margin-left: 459px;}
+.body_title_con{height: 47px; line-height: 47px; background-color: #f39700; font-size: 26px; color: #fff; padding: 0 25px;}
+.body_title_right{border-top: 47px solid #f39700; border-right: 47px solid #013a58;}
+
+.con{margin-top: 40px; overflow: hidden; margin-bottom: 60px;}
+.con_left{float: left; height: 284px; position: relative;}
+.con_right{float: right;}
+.con_left li{overflow: hidden;}
+.con_left li .con_left_title{float: left; width: 24px; height: 24px; background-image: url(../imgs/8_career_development/dwjs_xtb_23.jpg); text-align: center; line-height: 24px; font-size: 14px; color: #fff; margin-top: 5px;}
+.con_left li div{float: left; margin-left: 20px; width: 350px; font-size: 14px; color: #5b5b5b; line-height: 28px;}
+.con_left li span{font-weight: bold;}
+.con_line{width: 46px; height: 6px; background-color: #f39700; position: absolute; bottom: 0; left: 44px;}

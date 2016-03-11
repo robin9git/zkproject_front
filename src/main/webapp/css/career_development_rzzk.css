@@ -1,0 +1,22 @@
+/*.gy_header_line3 .gy_text{left: -277px;}*/
+.body{width: 1180px; margin: 0 auto; margin-top: 40px;}
+.body_title{padding: 9px 0; border-top: 1px solid #f39700; border-bottom: 1px solid #f39700; height: 47px;}
+.body_title_in{background-color: #013a58; height: 47px; overflow: hidden;}
+.body_title_in p{float: left;}
+.body_title_left{border-bottom: 47px solid #f39700; border-left: 47px solid #013a58; margin-left: 459px;}
+.body_title_con{height: 47px; line-height: 47px; background-color: #f39700; font-size: 26px; color: #fff; padding: 0 25px;}
+.body_title_right{border-top: 47px solid #f39700; border-right: 47px solid #013a58;}
+
+.con1{margin-top: 40px; margin-bottom: 60px; overflow: hidden;}
+.con1 .con_left{float: right; height: 329px; position: relative;}
+.con1 .con_left div{width: 46px; height: 6px; background-color: #f39700; position: absolute; bottom: 0; left: 0px;}
+.con1 p{font-size: 14px; color: #5b5b5b; line-height: 28px; width: 393px;}
+.con1 p:first-child{margin-bottom: 40px;}
+.con1 img{float: left;}
+
+.con2{margin-top: 40px; margin-bottom: 60px; overflow: hidden;}
+.con2 .con_left{float: left; height: 329px; position: relative;}
+.con2 .con_left div{width: 46px; height: 6px; background-color: #f39700; position: absolute; bottom: 0; left: 0px;}
+.con2 p{font-size: 14px; color: #5b5b5b; line-height: 28px; width: 393px;}
+.con2 p:first-child{margin-bottom: 40px;}
+.con2 img{float: right;}

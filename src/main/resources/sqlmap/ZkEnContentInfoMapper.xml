@@ -1,0 +1,293 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.rgi.zkhcy.front.module.dao.ZkEnContentInfoDao">
+	<cache eviction="FIFO" flushInterval="60000" size="1024"
+		readOnly="true" />
+	<!-- Result Map -->
+	<resultMap id="BaseResultMap"
+		type="com.rgi.zkhcy.front.common.bean.dataBean.ZkContentInfoData">
+		<result column="id" property="id" />
+		<result column="title" property="title" />
+		<result column="content" property="content" />
+		<result column="long_title" property="long_title" />
+		<result column="contorder" property="contorder" />
+		<result column="newsfrom" property="newsfrom" />
+		<result column="pic_src" property="pic_src" />
+		<result column="publicTime" property="publicTime" />
+		<result column="indexPic" property="indexPic" />
+		<result column="isTop" property="isTop" />
+		<result column="groupPic" property="groupPic" />
+	</resultMap>
+
+	<!-- zk_en_content_info table all fields -->
+	<sql id="Base_Column_List">
+		id,title,creattime,content,status,long_title,menu_id,contorder,newslevel,newsfrom,pic_src,publicTime,indexPic,isTop,groupPic
+	</sql>
+
+	<!-- 查询条件 -->
+	<sql id="Example_Where_Clause">
+		where 1=1
+		<trim suffixOverrides=",">
+			<if test="id != null and id != ''">
+				and id = #{id}
+			</if>
+			<if test="title != null and title != ''">
+				and title = #{title}
+			</if>
+			<if test="creattime != null and creattime != ''">
+				and creattime = #{creattime}
+			</if>
+			<if test="content != null and content != ''">
+				and content = #{content}
+			</if>
+			<if test="status != null and status != ''">
+				and status = #{status}
+			</if>
+			<if test="long_title != null and long_title != ''">
+				and long_title = #{long_title}
+			</if>
+			<if test="menu_id != null and menu_id != ''">
+				and menu_id = #{menu_id}
+			</if>
+			<if test="contorder != null and contorder != ''">
+				and contorder = #{contorder}
+			</if>
+			<if test="newslevel != null and newslevel != ''">
+				and newslevel = #{newslevel}
+			</if>
+			<if test="newsfrom != null and newsfrom != ''">
+				and newsfrom = #{newsfrom}
+			</if>
+			<if test="pic_src != null and pic_src != ''">
+				and pic_src = #{pic_src}
+			</if>
+
+			<if test="beginDate != null and endDate != ''">
+				and ( creattime BETWEEN #{beginDate} AND #{endDate} )
+			</if>
+		</trim>
+	</sql>
+
+	<!-- 分页查询条件 -->
+	<sql id="Example_Where_Clause_Page">
+		where 1=1
+		<trim suffixOverrides=",">
+			<if test="id != null and id != ''">
+				and id = #{id}
+			</if>
+			<if test="title != null and title != ''">
+				and title = #{title}
+			</if>
+			<if test="creattime != null and creattime != ''">
+				and creattime = #{creattime}
+			</if>
+			<if test="content != null and content != ''">
+				and content = #{content}
+			</if>
+			<if test="status != null and status != ''">
+				and status = #{status}
+			</if>
+			<if test="long_title != null and long_title != ''">
+				and long_title = #{long_title}
+			</if>
+			<if test="menu_id != null and menu_id != ''">
+				and menu_id = #{menu_id}
+			</if>
+			<if test="contorder != null and contorder != ''">
+				and contorder = #{contorder}
+			</if>
+			<if test="newslevel != null and newslevel != ''">
+				and newslevel = #{newslevel}
+			</if>
+			<if test="newsfrom != null and newsfrom != ''">
+				and newsfrom = #{newsfrom}
+			</if>
+			<if test="pic_src != null and pic_src != ''">
+				and pic_src = #{pic_src}
+			</if>
+		</trim>
+	</sql>
+
+	<!-- 插入记录 -->
+	<insert id="add" parameterType="Object" useGeneratedKeys="true"
+		keyProperty="id">
+		insert into
+		zk_en_content_info(title,creattime,content,status,long_title,menu_id,contorder,newslevel,newsfrom,pic_src)
+		values(#{title},#{creattime},#{content},#{status},#{long_title},#{menu_id},#{contorder},#{newslevel},#{newsfrom},#{pic_src})
+	</insert>
+
+	<!-- 删除记录 -->
+	<delete id="delete" parameterType="Object">
+		delete from zk_en_content_info
+		where id = #{id}
+	</delete>
+
+	<!-- 根据id，修改记录 -->
+	<update id="updateById" parameterType="Object">
+		update zk_en_content_info
+		set
+		title=#{title},creattime=#{creattime},content=#{content},status=#{status},long_title=#{long_title},menu_id=#{menu_id},contorder=#{contorder},newslevel=#{newslevel},newsfrom=#{newsfrom},pic_src=#{pic_src}
+		where id=#{id}
+	</update>
+
+	<!-- 修改记录，只修改只不为空的字段 -->
+	<update id="updateByObject" parameterType="Object">
+		update zk_en_content_info set
+		<trim suffixOverrides=",">
+			<if test="title != null  ">
+				title=#{title},
+			</if>
+			<if test="creattime != null  ">
+				creattime=#{creattime},
+			</if>
+			<if test="content != null  ">
+				content=#{content},
+			</if>
+			<if test="status != null  ">
+				status=#{status},
+			</if>
+			<if test="long_title != null  ">
+				long_title=#{long_title},
+			</if>
+			<if test="menu_id != null  ">
+				menu_id=#{menu_id},
+			</if>
+			<if test="contorder != null  ">
+				contorder=#{contorder},
+			</if>
+			<if test="newslevel != null  ">
+				newslevel=#{newslevel},
+			</if>
+			<if test="newsfrom != null  ">
+				newsfrom=#{newsfrom},
+			</if>
+			<if test="pic_src != null  ">
+				pic_src=#{pic_src},
+			</if>
+		</trim>
+		where id=#{id}
+	</update>
+
+	<!-- 根据id查询单条记录 -->
+	<select id="queryById" resultMap="BaseResultMap" parameterType="Object">
+		select
+		<include refid="Base_Column_List" />
+		from zk_en_content_info where id = #{id}
+	</select>
+
+	<!-- 根据非ID 字段查询单条记录 -->
+	<select id="queryByObject" resultMap="BaseResultMap"
+		parameterType="Object">
+		select
+		<include refid="Base_Column_List" />
+		from zk_en_content_info
+		<include refid="Example_Where_Clause" />
+	</select>
+
+	<!-- 根据实体类对象查询列表 -->
+	<select id="queryListByObject" resultMap="BaseResultMap"
+		parameterType="Object">
+		select
+		<include refid="Base_Column_List" />
+		from zk_en_content_info
+		<include refid="Example_Where_Clause" />
+		<!-- ORDER BY newslevel,contorder ASC -->
+
+		ORDER BY to_days( publicTime ) DESC,contOrder ASC
+
+	</select>
+
+
+
+	<!-- 根据实体类对象查询列表 -->
+	<select id="queryContentNewsInfo" resultMap="BaseResultMap"
+		parameterType="Object">
+		select a.* from zk_menu b LEFT JOIN zk_en_content_info a
+		on b.id = a.menu_id where 1=1
+		<if test="menu_id != null  ">
+			and b.parentfunctionid =#{menu_id}
+		</if>
+		and LENGTH(a.id)>1 ORDER BY a.publicTime
+		DESC,b.functionorder,a.newslevel,a.contorder ASC
+	</select>
+
+
+	<!-- 分页查询列表 -->
+	<select id="queryList4Page" resultMap="BaseResultMap"
+		parameterType="Object">
+		select
+		<include refid="Base_Column_List" />
+		from zk_en_content_info
+		<include refid="Example_Where_Clause_Page" />
+		<choose>
+			<when test="page !=null and page.orderBy != null and page.orderBy != ''">
+				ORDER BY ${page.orderBy}
+			</when>
+			<otherwise>
+				ORDER BY id DESC
+			</otherwise>
+		</choose>
+	</select>
+
+	<!-- 查询记录数 -->
+	<select id="queryAmount" resultType="java.lang.Long"
+		parameterType="Object">
+		select count(1) from zk_en_content_info
+		<include refid="Example_Where_Clause_Page" />
+	</select>
+
+	<!-- 查询所有记录 -->
+	<select id="queryAllList" resultMap="BaseResultMap"
+		parameterType="Object">
+		select
+		<include refid="Base_Column_List" />
+		from zk_en_content_info
+		order by id desc
+	</select>
+
+
+	<select id="queryLucene" resultMap="BaseResultMap"
+		parameterType="java.util.Map">
+		SELECT zc.id,zc.title,zc.long_title,zc.content,zc.publicTime,zc.menu_id,menu.functionname as menuName
+		from zk_en_content_info zc,zk_en_menu menu
+		where 1= 1 and menu.id = zc.menu_id
+		AND ( zc.title like '%${query}%' OR zc.content like '%${query}%' OR zc.long_title like '%${query}%' ) 
+		and  zc.menu_id in ('4028814d52871d3d015287a3546b0031','4028814d52871d3d015287a37feb0033','8aad12b1533058a80153318e6e97000e') 
+		and zc.`status` = 1
+		ORDER BY zc.publicTime DESC
+		<if
+			test="(pageStart ==0  or (pageStart != null and pageStart != '') ) and pageNum != null and pageNum != '' ">
+			limit #{pageStart},#{pageNum}
+		</if>
+	</select>
+
+	<!-- 查询记录数 -->
+	<select id="queryLuceneAmount" resultType="java.lang.Long"
+		parameterType="java.util.Map">
+		SELECT count(1)
+		from zk_zh_content_info zc,zk_zh_menu menu
+		where 1= 1 and menu.id = zc.menu_id
+		AND ( zc.title like '%${query}%' OR zc.content like '%${query}%' OR zc.long_title like '%${query}%' ) 
+		and  zc.menu_id in ('4028814d52871d3d015287a3546b0031','4028814d52871d3d015287a37feb0033','8aad12b1533058a80153318e6e97000e') 
+		and zc.`status` = 1
+	</select>
+
+	<!-- 查询3条图片新闻或行业动态 -->
+	<select id="getZkContentInfoList3ById" resultMap="BaseResultMap"
+		parameterType="Object">
+		select
+		id,title,content,long_title,contorder,newsfrom,pic_src,publicTime,indexPic
+		from zk_en_content_info
+		where 1=1
+		<if test="menu_id != null and menu_id !='' ">
+			and menu_id = #{menu_id}
+		</if>
+		<!-- 选择不空的图片 -->
+		and indexPic is not null and indexPic != ''
+		and isTop = 2
+		ORDER BY publicTime desc ,
+		contorder asc
+		limit 0,3
+	</select>
+
+</mapper>

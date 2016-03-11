@@ -1,0 +1,31 @@
+.body{width: 1180px; margin: 0 auto; margin-top: 40px;}
+
+.body1_in{margin-top: 60px; overflow: hidden;}
+.body1_in_left{float: left; width: 533px;}
+.body1_in_left_line{width: 46px; height: 6px; background-color: #f39700; margin-bottom: 20px;}
+.body1_in_left_text1{font-size: 14px; color: #5b5b5b;}
+.body1_in_left_text2{font-size: 18px; color: #373737; font-weight: bold;}
+.body1_in_left_text3{font-size: 14px; color: #5b5b5b; margin-top: 20px; margin-bottom: 55px; line-height: 28px;}
+.body1_in_left_a{background: url(../imgs/2_news/gsxw_t2_06.jpg) 0 0 no-repeat; width: 125px; height: 26px; line-height: 26px; cursor: pointer; display: block; color: #fff;}
+.body1_in_left_a:hover{color: #fff;}
+.body1_in_left_a span{font-size: 12px; color: #fff; padding-left: 14px;}
+
+
+.body1_in_right{float: right; width: 578px; height: 271px; position: relative; background-color: #f39700; margin-top: 13px;}
+.body1_in_right img{width: 578px; height: 271px; position: absolute; top: -13px; left: -13px;}
+
+.body2{margin-top: 40px;}
+.body2 ul{border-bottom: 1px solid #d1d1d1;}
+.body2 li{height: 117px; padding: 26px 0 26px 1px; border-top: 1px solid #d1d1d1; overflow: hidden;}
+.body2 li:hover{background-color: #f4f4f4; border-top: 1px solid #d1d1d1;}
+.body2_li_l{float: left; width: 117px; height: 117px; background-color: #f39700;overflow: hidden;}
+.body2_li_l span{float: left; font-size: 48px; color: #fff; margin-top: 11px; margin-left: 29px;}
+.body2_li_l p{float: left; font-size: 18px; color: #fff; margin-left: 21px;}
+
+.body2_li_r{float: right; width: 1036px; display: block; cursor: pointer;}
+.body2_li_r h2{font-size: 18px; color: #373737; font-weight: bold;}
+.body2_li_r p{font-size: 14px; color: #5b5b5b; line-height: 28px; margin-top: 9px; margin-bottom: 10px;}
+.body2_li_r span{font-size: 12px; color: #969696;}
+
+.body2_ckgd{width: 100%; height: 40px; line-height: 40px; text-align: center; background-color: #d1d1d1; font-size: 14px; color: #013a58; margin-bottom: 60px;margin-top:40px}
+.body2_ckgd a{font-size: 14px; color: #013a58;}

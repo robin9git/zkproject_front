@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.rgi.zkhcy.front.module.dao.ZkEnLinkInfoDao">
+   <cache  eviction="FIFO" flushInterval="60000" size="1024" readOnly="true"/> 
+	<!-- Result Map -->
+	<resultMap id="BaseResultMap" type="com.rgi.zkhcy.front.common.bean.dataBean.ZkLinkInfoData">
+		 <result column="id" property="id" />
+		 <result column="category" property="category" />
+		 <result column="name" property="name" />
+		 <result column="url" property="url" />
+			</resultMap>
+
+	<!-- zk_en_link_info table all fields -->
+	<sql id="Base_Column_List">
+		id,category,creattime,name,url
+	</sql>
+
+	<!-- 查询条件 -->
+	<sql id="Example_Where_Clause">
+		where 1=1
+		<trim suffixOverrides=",">
+									<if test="id != null and id != ''">
+				and id = #{id}
+			</if>
+									<if test="category != null and category != ''">
+				and category = #{category}
+			</if>
+									<if test="creattime != null and creattime != ''">
+				and creattime = #{creattime}
+			</if>
+									<if test="name != null and name != ''">
+				and name = #{name}
+			</if>
+									<if test="url != null and url != ''">
+				and url = #{url}
+			</if>
+					</trim>
+	</sql>
+	
+	<!-- 分页查询条件 -->
+	<sql id="Example_Where_Clause_Page">
+		where 1=1
+		<trim suffixOverrides=",">
+									<if test="id != null and id != ''">
+				and id = #{id}
+			</if>
+									<if test="category != null and category != ''">
+				and category = #{category}
+			</if>
+									<if test="creattime != null and creattime != ''">
+				and creattime = #{creattime}
+			</if>
+									<if test="name != null and name != ''">
+				and name = #{name}
+			</if>
+									<if test="url != null and url != ''">
+				and url = #{url}
+			</if>
+					</trim>
+	</sql>
+
+	<!-- 插入记录 -->
+	<insert id="add" parameterType="Object" useGeneratedKeys="true" keyProperty="id">
+		insert into zk_en_link_info(category,creattime,name,url)
+ values(#{category},#{creattime},#{name},#{url})
+	</insert>
+	
+	<!-- 删除记录 -->
+	<delete id="delete" parameterType="Object">
+		delete 	 from zk_en_link_info where id = #{id}
+	</delete>
+	
+	<!-- 根据id，修改记录 -->
+	<update id="updateById" parameterType="Object">
+		update zk_en_link_info set category=#{category},creattime=#{creattime},name=#{name},url=#{url} where id=#{id}
+	</update>
+
+	<!-- 修改记录，只修改只不为空的字段 -->
+	<update id="updateByObject" parameterType="Object">
+		update zk_en_link_info set 
+	<trim  suffixOverrides="," >
+	<if test="category != null  ">
+		category=#{category},
+	</if>
+	<if test="creattime != null  ">
+		creattime=#{creattime},
+	</if>
+	<if test="name != null  ">
+		name=#{name},
+	</if>
+	<if test="url != null  ">
+		url=#{url},
+	</if>
+	</trim> where id=#{id}
+	</update>
+
+	<!-- 根据id查询单条记录 -->
+	<select id="queryById" resultMap="BaseResultMap" parameterType="Object">
+		select <include refid="Base_Column_List" /> 
+	 from zk_en_link_info where id = #{id}
+	</select>
+
+	<!-- 根据非ID 字段查询单条记录 -->
+	<select id="queryByObject" resultMap="BaseResultMap" parameterType="Object">
+		select
+		<include refid="Base_Column_List" />
+		from zk_en_link_info
+		<include refid="Example_Where_Clause" />
+	</select>
+	
+	<!-- 根据实体类对象查询列表 -->
+	<select id="queryListByObject" resultMap="BaseResultMap" parameterType="Object">
+		select
+		<include refid="Base_Column_List" />
+		from zk_en_link_info
+		<include refid="Example_Where_Clause" />
+	</select>
+	
+	<!-- 分页查询列表 -->
+	<select id="queryList4Page" resultMap="BaseResultMap" parameterType="Object">
+		select <include refid="Base_Column_List" /> from zk_en_link_info
+		<include refid="Example_Where_Clause_Page" />
+		<choose>
+			<when test="page !=null and page.orderBy != null and page.orderBy != ''">
+				ORDER BY ${page.orderBy}
+			</when>
+			<otherwise>
+				ORDER BY id DESC
+			</otherwise>
+		</choose>
+	</select>
+
+	<!-- 查询记录数 -->
+	<select id="queryAmount" resultType="java.lang.Long" parameterType="Object">
+		select count(1) from zk_en_link_info
+		<include refid="Example_Where_Clause_Page" />
+	</select>
+	
+	<!-- 查询所有记录 -->
+	<select id="queryAllList" resultMap="BaseResultMap" parameterType="Object">
+		select
+		<include refid="Base_Column_List" />
+		from zk_en_link_info
+		order by category asc
+	</select>
+		
+</mapper>

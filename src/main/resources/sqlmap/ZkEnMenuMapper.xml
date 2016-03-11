@@ -1,0 +1,224 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.rgi.zkhcy.front.module.dao.ZkEnMenuDao">
+    <cache  eviction="FIFO" flushInterval="60000" size="1024" readOnly="true"/> 
+	<!-- Result Map -->
+	<resultMap id="BaseResultMap" type="com.rgi.zkhcy.front.common.bean.dataBean.ZkMenuData">
+		 <result column="id" property="id" />
+		 <result column="functionname" property="functionname" />
+			</resultMap>
+
+	<!-- zk_en_menu table all fields -->
+	<sql id="Base_Column_List">
+		id,functioniframe,functionlevel,functionname,functionorder,functionurl,parentfunctionid,iconid,desk_iconid,functiontype,functionmark,show_type
+	</sql>
+
+	<!-- 查询条件 -->
+	<sql id="Example_Where_Clause">
+		where 1=1
+		<trim suffixOverrides=",">
+									<if test="id != null and id != ''">
+				and id = #{id}
+			</if>
+									<if test="functioniframe != null and functioniframe != ''">
+				and functioniframe = #{functioniframe}
+			</if>
+									<if test="functionlevel != null and functionlevel != ''">
+				and functionlevel = #{functionlevel}
+			</if>
+									<if test="functionname != null and functionname != ''">
+				and functionname = #{functionname}
+			</if>
+									<if test="functionorder != null and functionorder != ''">
+				and functionorder = #{functionorder}
+			</if>
+									<if test="functionurl != null and functionurl != ''">
+				and functionurl = #{functionurl}
+			</if>
+									<if test="parentfunctionid != null and parentfunctionid != ''">
+										<if test="parentfunctionid !='isHead'">
+											and parentfunctionid = #{parentfunctionid}
+										</if>
+										<!-- 如果为ISHEAD 只查询最顶级菜单 -->
+										<if test="parentfunctionid =='isHead'">
+											and (parentfunctionid is null or parentfunctionid='')
+										</if>
+			</if>
+									<if test="iconid != null and iconid != ''">
+				and iconid = #{iconid}
+			</if>
+									<if test="desk_iconid != null and desk_iconid != ''">
+				and desk_iconid = #{desk_iconid}
+			</if>
+									<if test="functiontype != null and functiontype != ''">
+				and functiontype = #{functiontype}
+			</if>
+									<if test="functionmark != null and functionmark != ''">
+				and functionmark = #{functionmark}
+			</if>
+									<if test="show_type != null and show_type != ''">
+										<!-- 自定义查询参数14： show_type=1 or show_type=4 24： show_type=2 or show_type=4 -->
+										<if test="show_type ==14">
+											and (show_type =1 or show_type=4)
+										</if>
+										<if test="show_type ==24">
+											and (show_type =2 or show_type=4)
+										</if>
+										<if test="show_type !=24 and show_type!=14">
+											and show_type = #{show_type}
+										</if>
+			</if>
+					</trim>
+	</sql>
+	
+	<!-- 分页查询条件 -->
+	<sql id="Example_Where_Clause_Page">
+		where 1=1
+		<trim suffixOverrides=",">
+									<if test="id != null and id != ''">
+				and id = #{id}
+			</if>
+									<if test="functioniframe != null and functioniframe != ''">
+				and functioniframe = #{functioniframe}
+			</if>
+									<if test="functionlevel != null and functionlevel != ''">
+				and functionlevel = #{functionlevel}
+			</if>
+									<if test="functionname != null and functionname != ''">
+				and functionname = #{functionname}
+			</if>
+									<if test="functionorder != null and functionorder != ''">
+				and functionorder = #{functionorder}
+			</if>
+									<if test="functionurl != null and functionurl != ''">
+				and functionurl = #{functionurl}
+			</if>
+									<if test="parentfunctionid != null and parentfunctionid != ''">
+				and parentfunctionid = #{parentfunctionid}
+			</if>
+									<if test="iconid != null and iconid != ''">
+				and iconid = #{iconid}
+			</if>
+									<if test="desk_iconid != null and desk_iconid != ''">
+				and desk_iconid = #{desk_iconid}
+			</if>
+									<if test="functiontype != null and functiontype != ''">
+				and functiontype = #{functiontype}
+			</if>
+									<if test="functionmark != null and functionmark != ''">
+				and functionmark = #{functionmark}
+			</if>
+									<if test="show_type != null and show_type != ''">
+				and show_type = #{show_type}
+			</if>
+					</trim>
+	</sql>
+
+	<!-- 插入记录 -->
+	<insert id="add" parameterType="Object" useGeneratedKeys="true" keyProperty="id">
+		insert into zk_en_menu(functioniframe,functionlevel,functionname,functionorder,functionurl,parentfunctionid,iconid,desk_iconid,functiontype,functionmark,show_type)
+ values(#{functioniframe},#{functionlevel},#{functionname},#{functionorder},#{functionurl},#{parentfunctionid},#{iconid},#{desk_iconid},#{functiontype},#{functionmark},#{show_type})
+	</insert>
+	
+	<!-- 删除记录 -->
+	<delete id="delete" parameterType="Object">
+		delete 	 from zk_en_menu where id = #{id}
+	</delete>
+	
+	<!-- 根据id，修改记录 -->
+	<update id="updateById" parameterType="Object">
+		update zk_en_menu set functioniframe=#{functioniframe},functionlevel=#{functionlevel},functionname=#{functionname},functionorder=#{functionorder},functionurl=#{functionurl},parentfunctionid=#{parentfunctionid},iconid=#{iconid},desk_iconid=#{desk_iconid},functiontype=#{functiontype},functionmark=#{functionmark},show_type=#{show_type} where id=#{id}
+	</update>
+
+	<!-- 修改记录，只修改只不为空的字段 -->
+	<update id="updateByObject" parameterType="Object">
+		update zk_en_menu set 
+	<trim  suffixOverrides="," >
+	<if test="functioniframe != null  ">
+		functioniframe=#{functioniframe},
+	</if>
+	<if test="functionlevel != null  ">
+		functionlevel=#{functionlevel},
+	</if>
+	<if test="functionname != null  ">
+		functionname=#{functionname},
+	</if>
+	<if test="functionorder != null  ">
+		functionorder=#{functionorder},
+	</if>
+	<if test="functionurl != null  ">
+		functionurl=#{functionurl},
+	</if>
+	<if test="parentfunctionid != null  ">
+		parentfunctionid=#{parentfunctionid},
+	</if>
+	<if test="iconid != null  ">
+		iconid=#{iconid},
+	</if>
+	<if test="desk_iconid != null  ">
+		desk_iconid=#{desk_iconid},
+	</if>
+	<if test="functiontype != null  ">
+		functiontype=#{functiontype},
+	</if>
+	<if test="functionmark != null  ">
+		functionmark=#{functionmark},
+	</if>
+	<if test="show_type != null  ">
+		show_type=#{show_type},
+	</if>
+	</trim> where id=#{id}
+	</update>
+
+	<!-- 根据id查询单条记录 -->
+	<select id="queryById" resultMap="BaseResultMap" parameterType="Object">
+		select <include refid="Base_Column_List" /> 
+	 from zk_en_menu where id = #{id}
+	</select>
+
+	<!-- 根据非ID 字段查询单条记录 -->
+	<select id="queryByObject" resultMap="BaseResultMap" parameterType="Object">
+		select
+		<include refid="Base_Column_List" />
+		from zk_en_menu
+		<include refid="Example_Where_Clause" />
+	</select>
+	
+	<!-- 根据实体类对象查询列表 -->
+	<select id="queryListByObject" resultMap="BaseResultMap" parameterType="Object">
+		select
+		<include refid="Base_Column_List" />
+		from zk_en_menu
+		<include refid="Example_Where_Clause" />
+		ORDER BY functionorder+0 ASC
+	</select>
+	
+	<!-- 分页查询列表 -->
+	<select id="queryList4Page" resultMap="BaseResultMap" parameterType="Object">
+		select <include refid="Base_Column_List" /> from zk_en_menu
+		<include refid="Example_Where_Clause_Page" />
+		<choose>
+			<when test="page !=null and page.orderBy != null and page.orderBy != ''">
+				ORDER BY ${page.orderBy}
+			</when>
+			<otherwise>
+				ORDER BY id DESC
+			</otherwise>
+		</choose>
+	</select>
+
+	<!-- 查询记录数 -->
+	<select id="queryAmount" resultType="java.lang.Long" parameterType="Object">
+		select count(1) from zk_en_menu
+		<include refid="Example_Where_Clause_Page" />
+	</select>
+	
+	<!-- 查询所有记录 -->
+	<select id="queryAllList" resultMap="BaseResultMap" parameterType="Object">
+		select
+		<include refid="Base_Column_List" />
+		from zk_en_menu
+		order by id desc
+	</select>
+		
+</mapper>

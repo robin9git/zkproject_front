@@ -1,0 +1,7 @@
+.body{width: 1180px; margin: 0 auto; margin-top: 40px; position: relative; /*height: 892px;*/ margin-bottom: 40px;}
+.body > span{font-size: 26px; color: #013b59; border-left: 6px solid #f39700; padding-left: 30px; font-weight:bold;}
+.body .body_xinx{overflow: hidden;}
+.body ul{ margin-top: 46px; margin-left: 48px; float: left;}
+.body .box2{margin-left: 200px;}
+.body ul li{font-size: 16px; color: #3c3c3c; margin-bottom: 25px;}
+.body .body_img{ margin-top: 43px; margin-left: 39px;}

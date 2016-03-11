@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.rgi.zkhcy.front.module.dao.ZkContentImgDao">
+	<cache eviction="FIFO" flushInterval="60000" size="1024"
+		readOnly="true" />
+	<!-- Result Map -->
+	<resultMap id="BaseResultMap"
+		type="com.rgi.zkhcy.front.common.bean.dataBean.ZkContentImgData">
+		<result column="id" property="id" />
+		<result column="content_id" property="content_id" />
+		<result column="img_url" property="img_url" />
+		<result column="status" property="status" />
+		<result column="add_time" property="add_time" />
+	</resultMap>
+
+	<!-- zk_zh_content_info table all fields -->
+	<sql id="Base_Column_List">
+		id,content_id,img_url,status,add_time
+	</sql>
+
+	<!-- 查询条件 -->
+	<sql id="Example_Where_Clause">
+		where 1=1
+		<trim suffixOverrides=",">
+			<if test="id != null and id != ''">
+				and id = #{id}
+			</if>
+			<if test="content_id != null and content_id != ''">
+				and content_id = #{content_id}
+			</if>
+			<if test="img_url != null and img_url != ''">
+				and img_url = #{img_url}
+			</if>
+
+			<if test="status != null and status != ''">
+				and status = #{status}
+			</if>
+			<if test="add_time != null and add_time != ''">
+				and add_time = #{add_time}
+			</if>
+
+		</trim>
+	</sql>
+
+
+
+
+	<!-- 根据id查询单条记录 -->
+	<select id="queryById" resultMap="BaseResultMap" parameterType="Object">
+		select
+		<include refid="Base_Column_List" />
+		from zk_zh_content_img where id = #{id}
+	</select>
+
+	<!-- 根据非ID 字段查询单条记录 -->
+	<select id="queryByObject" resultMap="BaseResultMap"
+		parameterType="Object">
+		select
+		<include refid="Base_Column_List" />
+		from zk_zh_content_img
+		<include refid="Example_Where_Clause" />
+	</select>
+
+	<!-- 根据实体类对象查询列表 -->
+	<select id="queryListByObject" resultMap="BaseResultMap"
+		parameterType="Object">
+		select
+		<include refid="Base_Column_List" />
+		from zk_zh_content_img
+		<include refid="Example_Where_Clause" />
+	</select>
+
+</mapper>

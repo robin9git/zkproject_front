@@ -1,0 +1,31 @@
+.body_1_out{width: 1180px; margin: 0 auto; margin-top: 40px;}
+.body_1{padding-left: 37px; border-left: 6px solid #f39700; margin-left: 10px; margin-bottom: 80px;}
+.body_1 h1{font-size: 26px; font-weight: bold; color: #013b59;}
+.body_1 p{font-size: 18px; color: #555;}
+
+/*.body_2{height: 361px; width: 100%; margin-top: 76px; background-image: url(../imgs/1_about/zzjg_2_02.jpg);}
+.body_2_in{width: 1180px; margin: 0 auto;}
+.body_con{width: 521px; height: 268px; float: right; margin-top: 31px;}
+.body_con:first-child{float: left;}
+.body_con1{width: 501px; height: 43px;  background-image: url(../imgs/1_about/zzjg_3_03.png); line-height: 43px; margin-bottom: 10px; font-size: 16px; color: #083a57; font-weight: bold; padding-left: 20px;}
+.body_con2{width: 480px; height: 182px; background-color: #fff; padding-top: 33px; padding-left: 20px; padding-right: 21px; font-size: 16px; color: #083a57; line-height: 30px;}
+.body_con2 span{font-weight: bold;}*/
+
+.body_1_out ul{width: 1180px; height: 428px; overflow: hidden; margin-bottom: 76px;}
+.body_1_out ul li{width: 17px; height: 178px;  float: left; padding: 0 14px 0; font-size: 16px; margin-left: 42px; position: relative;}
+.body_1_out ul li:first-child{margin-left: 0;}
+.body_1_out ul li span{display: block; padding-top: 40px; line-height: 18px; text-align: center;}
+.body_1_out ul li .fenji_sanzi{ padding-top: 60px;}
+.fenji_1{background: url(../imgs/1_about/zzjg_fenji2_07.jpg) 0 0 no-repeat;}
+/*.fenji_1:first-child{background: url(../imgs/1_about/zzjg_fenji1_05.jpg) 0 0 no-repeat; color: #fff;}*/
+.fenji_1_hover{background: url(../imgs/1_about/zzjg_fenji1_05.jpg) 0 0 no-repeat; color: #fff;}
+.fenji_2{background: url(../imgs/1_about/zzjg_fenji4_11.jpg) 0 0 no-repeat;}
+.fenji_2_hover{background: url(../imgs/1_about/zzjg_fenji5_03.jpg) 0 0 no-repeat; color: #fff;}
+.fenji_3{background: url(../imgs/1_about/zzjg_fenji3_11.jpg) 0 0 no-repeat;}
+.fenji_3_hover{background: url(../imgs/1_about/zzjg_fenji2_07.jpg) 0 0 no-repeat; color: #013b59;}
+/*.body_1_out ul li:hover .fenji_box{display: block;}*/
+.body_1_out ul li .fenji_box{position: absolute; top: 178px; left: 0; width: 376px; display: none;}
+.body_1_out ul li:first-child .fenji_box{display: block;}
+.body_1_out ul li img{position: absolute; top: 0px; left: 0;}
+.body_1_out ul li .fenji_box div{position: absolute; top: 62px; left: 0; width: 372px; height: 184px; border: 2px solid #083a57; /*overflow: auto;*/}
+.fenji_box div p{font-size: 14px; color: #083a57; line-height: 28px; padding: 14px 19px 0;}

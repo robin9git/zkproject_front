@@ -1,0 +1,32 @@
+.body{width: 1180px; margin: 0 auto; margin-top: 70px;}
+
+.body1 > p{font-size: 26px; color: #013b59; text-align: center; font-weight:bold;}
+.body1_1{margin: 60px auto 0; width: 1064px; height: 362px; background-image: url(../imgs/1_about/1_about_zhanlue.jpg); overflow: hidden;}
+.body1_1 li{float: left; font-size: 20px; color: #fff; margin-top: 207px; width: 321px; text-align: center; margin-left: 50px;}
+.body1_1 li:first-child{margin-left: 0px;}
+.body1_2{margin-top: 63px;}
+.body1_2 li{margin-top: 57px; overflow: hidden; height: 114px;}
+.body1_2 li img{float: left; width: 113px; height: 114px; margin-right: 23px;}
+.body1_2 li div{float: left; width: 1044px;}
+.body1_2 li div h1{font-size: 14px; color: #3c3c3c; font-weight: bold;}
+.body1_2 li div p{font-size: 14px; color: #3c3c3c; margin-top: 16px; line-height: 25px;}
+
+.body2{margin-top: 55px;}
+.body2 > p{font-size: 26px; color: #013b59; text-align: center; font-weight:bold;}
+.body2_1{width: 1063px; height: 355px; overflow: hidden; margin: 60px auto 0;}
+.body2_1 li{width: 337px; height: 355px; float: left; font-size: 20px; color: #fff; text-align: center; font-weight: bold;}
+.body2_1 li p:first-child{margin-top: 60px; margin-bottom: 10px;}
+.body2_1 li:nth-child(1){background-image: url(../imgs/1_about/1_about_datu1.jpg);}
+.body2_1 li:nth-child(2){background-image: url(../imgs/1_about/1_about_datu2.jpg); float: left; margin: 0 26px;}
+.body2_1 li:nth-child(3){background-image: url(../imgs/1_about/1_about_datu3.jpg);}
+
+.body2_2{margin-top: 60px; font-size: 14px; color: #3c3c3c; line-height: 28px;}
+.body2_2 li:first-child{margin-bottom: 30px;}
+
+.body2_3{margin: 60px auto; overflow: hidden; width: 1061px; height: 339px;}
+.body2_3 li{float: left; width: 198px; height: 310px; margin-left: 12px; background-color: #f4f4f4; padding: 29px 30px 0 28px;}
+.body2_3 li:first-child{margin-left: 0px;}
+.body2_3 li img{width: 198px; height: 134px;}
+.body2_3 li .body2_3_title{padding-top: 13px; font-size: 22px; color: #013b59; text-align: left;}
+.body2_3 li div{width: 10px; height: 1px; background-color: #013b59; margin: 16px 0px 16px 1px;}
+.body2_3 li .body2_3_text{font-size: 12px; color: #5b5b5b; line-height: 20px; text-align: left;}

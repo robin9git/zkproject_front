@@ -1,0 +1,167 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.rgi.zkhcy.front.module.dao.ZkEnRecruitInfoDao">
+    <cache  eviction="FIFO" flushInterval="60000" size="1024" readOnly="true"/> 
+	<!-- Result Map -->
+	<resultMap id="BaseResultMap" type="com.rgi.zkhcy.front.common.bean.dataBean.ZkRecruitInfoData">
+		 <result column="id" property="id" />
+		 <result column="category" property="category" />
+		 <result column="job_title" property="job_title" />
+		 <result column="spec_orentation" property="spec_orentation" />
+		 <result column="required" property="required" />
+		 <result column="rec_num" property="rec_num" />
+			</resultMap>
+
+	<!-- zk_en_recruit_info table all fields -->
+	<sql id="Base_Column_List">
+		id,category,job_title,spec_orentation,required,createdate,rec_num
+	</sql>
+
+	<!-- 查询条件 -->
+	<sql id="Example_Where_Clause">
+		where 1=1
+		<trim suffixOverrides=",">
+									<if test="id != null and id != ''">
+				and id = #{id}
+			</if>
+									<if test="category != null and category != ''">
+				and category = #{category}
+			</if>
+									<if test="job_title != null and job_title != ''">
+				and job_title = #{job_title}
+			</if>
+									<if test="spec_orentation != null and spec_orentation != ''">
+				and spec_orentation = #{spec_orentation}
+			</if>
+									<if test="required != null and required != ''">
+				and required = #{required}
+			</if>
+									<if test="createdate != null and createdate != ''">
+				and createdate = #{createdate}
+			</if>
+									<if test="rec_num != null and rec_num != ''">
+				and rec_num = #{rec_num}
+			</if>
+					</trim>
+	</sql>
+	
+	<!-- 分页查询条件 -->
+	<sql id="Example_Where_Clause_Page">
+		where 1=1
+		<trim suffixOverrides=",">
+									<if test="id != null and id != ''">
+				and id = #{id}
+			</if>
+									<if test="category != null and category != ''">
+				and category = #{category}
+			</if>
+									<if test="job_title != null and job_title != ''">
+				and job_title = #{job_title}
+			</if>
+									<if test="spec_orentation != null and spec_orentation != ''">
+				and spec_orentation = #{spec_orentation}
+			</if>
+									<if test="required != null and required != ''">
+				and required = #{required}
+			</if>
+									<if test="createdate != null and createdate != ''">
+				and createdate = #{createdate}
+			</if>
+									<if test="rec_num != null and rec_num != ''">
+				and rec_num = #{rec_num}
+			</if>
+					</trim>
+	</sql>
+
+	<!-- 插入记录 -->
+	<insert id="add" parameterType="Object" useGeneratedKeys="true" keyProperty="id">
+		insert into zk_en_recruit_info(category,job_title,spec_orentation,required,createdate,rec_num)
+ values(#{category},#{job_title},#{spec_orentation},#{required},#{createdate},#{rec_num})
+	</insert>
+	
+	<!-- 删除记录 -->
+	<delete id="delete" parameterType="Object">
+		delete 	 from zk_en_recruit_info where id = #{id}
+	</delete>
+	
+	<!-- 根据id，修改记录 -->
+	<update id="updateById" parameterType="Object">
+		update zk_en_recruit_info set category=#{category},job_title=#{job_title},spec_orentation=#{spec_orentation},required=#{required},createdate=#{createdate},rec_num=#{rec_num} where id=#{id}
+	</update>
+
+	<!-- 修改记录，只修改只不为空的字段 -->
+	<update id="updateByObject" parameterType="Object">
+		update zk_en_recruit_info set 
+	<trim  suffixOverrides="," >
+	<if test="category != null  ">
+		category=#{category},
+	</if>
+	<if test="job_title != null  ">
+		job_title=#{job_title},
+	</if>
+	<if test="spec_orentation != null  ">
+		spec_orentation=#{spec_orentation},
+	</if>
+	<if test="required != null  ">
+		required=#{required},
+	</if>
+	<if test="createdate != null  ">
+		createdate=#{createdate},
+	</if>
+	<if test="rec_num != null  ">
+		rec_num=#{rec_num},
+	</if>
+	</trim> where id=#{id}
+	</update>
+
+	<!-- 根据id查询单条记录 -->
+	<select id="queryById" resultMap="BaseResultMap" parameterType="Object">
+		select <include refid="Base_Column_List" /> 
+	 from zk_en_recruit_info where id = #{id}
+	</select>
+
+	<!-- 根据非ID 字段查询单条记录 -->
+	<select id="queryByObject" resultMap="BaseResultMap" parameterType="Object">
+		select
+		<include refid="Base_Column_List" />
+		from zk_en_recruit_info
+		<include refid="Example_Where_Clause" />
+	</select>
+	
+	<!-- 根据实体类对象查询列表 -->
+	<select id="queryListByObject" resultMap="BaseResultMap" parameterType="Object">
+		select
+		<include refid="Base_Column_List" />
+		from zk_en_recruit_info
+		<include refid="Example_Where_Clause" />
+	</select>
+	
+	<!-- 分页查询列表 -->
+	<select id="queryList4Page" resultMap="BaseResultMap" parameterType="Object">
+		select <include refid="Base_Column_List" /> from zk_en_recruit_info
+		<include refid="Example_Where_Clause_Page" />
+		<choose>
+			<when test="page !=null and page.orderBy != null and page.orderBy != ''">
+				ORDER BY ${page.orderBy}
+			</when>
+			<otherwise>
+				ORDER BY id DESC
+			</otherwise>
+		</choose>
+	</select>
+
+	<!-- 查询记录数 -->
+	<select id="queryAmount" resultType="java.lang.Long" parameterType="Object">
+		select count(1) from zk_en_recruit_info
+		<include refid="Example_Where_Clause_Page" />
+	</select>
+	
+	<!-- 查询所有记录 -->
+	<select id="queryAllList" resultMap="BaseResultMap" parameterType="Object">
+		select
+		<include refid="Base_Column_List" />
+		from zk_en_recruit_info
+		order by id desc
+	</select>
+		
+</mapper>

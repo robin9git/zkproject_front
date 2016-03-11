@@ -1,0 +1,369 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.rgi.zkhcy.front.module.dao.ZkEnFactoryDao">
+
+	<!-- Result Map -->
+	<resultMap id="BaseResultMap"
+		type="com.rgi.zkhcy.front.common.bean.dataBean.ZkZhFactoryData">
+		<result column="id" property="id" />
+		<result column="menu_id" property="menu_id" />
+		<result column="proname" property="proname" />
+		<result column="constructorunit" property="constructorunit" />
+		<result column="constructorsite" property="constructorsite" />
+		<result column="constructionscale" property="constructionscale" />
+		<result column="profinance" property="profinance" />
+		<result column="prostatus" property="prostatus" />
+		<result column="mainpro" property="mainpro" />
+		<result column="currorder" property="currorder" />
+		<result column="status" property="status" />
+		<result column="adduser" property="adduser" />
+		<result column="addtime" property="addtime" />
+		<result column="upduser" property="upduser" />
+		<result column="updtime" property="updtime" />
+		<result column="pic_src" property="pic_src" />
+		<result column="content" property="content" />
+		<result column="picsrcs" property="picsrcs" />
+		<result column="assum" property="assum" />
+		<result column="isprofile" property="isprofile" />
+		<result column="pictitle" property="pictitle" />
+		<result column="picpic" property="picpic" />
+		<result column="piccontent" property="piccontent" />
+		<result column="menu_name" property="menu_name" />
+		<result column="isProDebriefing" property="isProDebriefing" />
+		<result column="proDebriefing" property="proDebriefing" />
+		<result column="proDebPic" property="proDebPic" />
+	</resultMap>
+
+	<!-- zk_en_factory table all fields -->
+	<sql id="Base_Column_List">
+		id,menu_id,proname,constructorunit,constructorsite,constructionscale,profinance,prostatus,mainpro,currorder,status,adduser,addtime,upduser,updtime,pic_src,content,picsrcs,assum,isprofile,pictitle,picpic,piccontent
+	</sql>
+
+	<!-- 查询条件 -->
+	<sql id="Example_Where_Clause">
+		where 1=1
+		<trim suffixOverrides=",">
+			<if test="id != null and id != ''">
+				and id = #{id}
+			</if>
+			<if test="menu_id != null and menu_id != ''">
+				and menu_id = #{menu_id}
+			</if>
+			<if test="proname != null and proname != ''">
+				and proname = #{proname}
+			</if>
+			<if test="constructorunit != null and constructorunit != ''">
+				and constructorunit = #{constructorunit}
+			</if>
+			<if test="constructorsite != null and constructorsite != ''">
+				and constructorsite = #{constructorsite}
+			</if>
+			<if test="constructionscale != null and constructionscale != ''">
+				and constructionscale = #{constructionscale}
+			</if>
+			<if test="profinance != null and profinance != ''">
+				and profinance = #{profinance}
+			</if>
+			<if test="prostatus != null and prostatus != ''">
+				and prostatus = #{prostatus}
+			</if>
+			<if test="mainpro != null and mainpro != ''">
+				and mainpro = #{mainpro}
+			</if>
+			<if test="currorder != null and currorder != ''">
+				and currorder = #{currorder}
+			</if>
+			<if test="status != null and status != ''">
+				and status = #{status}
+			</if>
+			<if test="adduser != null and adduser != ''">
+				and adduser = #{adduser}
+			</if>
+			<if test="addtime != null and addtime != ''">
+				and addtime = #{addtime}
+			</if>
+			<if test="upduser != null and upduser != ''">
+				and upduser = #{upduser}
+			</if>
+			<if test="updtime != null and updtime != ''">
+				and updtime = #{updtime}
+			</if>
+			<if test="pic_src != null and pic_src != ''">
+				and pic_src = #{pic_src}
+			</if>
+			<if test="content != null and content != ''">
+				and content = #{content}
+			</if>
+			<if test="picsrcs != null and picsrcs != ''">
+				and picsrcs = #{picsrcs}
+			</if>
+			<if test="assum != null and assum != ''">
+				and assum = #{assum}
+			</if>
+			<if test="isprofile != null and isprofile != ''">
+				and isprofile = #{isprofile}
+			</if>
+			<if test="pictitle != null and pictitle != ''">
+				and pictitle = #{pictitle}
+			</if>
+			<if test="picpic != null and picpic != ''">
+				and picpic = #{picpic}
+			</if>
+			<if test="piccontent != null and piccontent != ''">
+				and piccontent = #{piccontent}
+			</if>
+		</trim>
+	</sql>
+
+	<!-- 分页查询条件 -->
+	<sql id="Example_Where_Clause_Page">
+		where 1=1
+		<trim suffixOverrides=",">
+			<if test="id != null and id != ''">
+				and id = #{id}
+			</if>
+			<if test="menu_id != null and menu_id != ''">
+				and menu_id = #{menu_id}
+			</if>
+			<if test="proname != null and proname != ''">
+				and proname = #{proname}
+			</if>
+			<if test="constructorunit != null and constructorunit != ''">
+				and constructorunit = #{constructorunit}
+			</if>
+			<if test="constructorsite != null and constructorsite != ''">
+				and constructorsite = #{constructorsite}
+			</if>
+			<if test="constructionscale != null and constructionscale != ''">
+				and constructionscale = #{constructionscale}
+			</if>
+			<if test="profinance != null and profinance != ''">
+				and profinance = #{profinance}
+			</if>
+			<if test="prostatus != null and prostatus != ''">
+				and prostatus = #{prostatus}
+			</if>
+			<if test="mainpro != null and mainpro != ''">
+				and mainpro = #{mainpro}
+			</if>
+			<if test="currorder != null and currorder != ''">
+				and currorder = #{currorder}
+			</if>
+			<if test="status != null and status != ''">
+				and status = #{status}
+			</if>
+			<if test="adduser != null and adduser != ''">
+				and adduser = #{adduser}
+			</if>
+			<if test="addtime != null and addtime != ''">
+				and addtime = #{addtime}
+			</if>
+			<if test="upduser != null and upduser != ''">
+				and upduser = #{upduser}
+			</if>
+			<if test="updtime != null and updtime != ''">
+				and updtime = #{updtime}
+			</if>
+			<if test="pic_src != null and pic_src != ''">
+				and pic_src = #{pic_src}
+			</if>
+			<if test="content != null and content != ''">
+				and content = #{content}
+			</if>
+			<if test="picsrcs != null and picsrcs != ''">
+				and picsrcs = #{picsrcs}
+			</if>
+			<if test="assum != null and assum != ''">
+				and assum = #{assum}
+			</if>
+			<if test="isprofile != null and isprofile != ''">
+				and isprofile = #{isprofile}
+			</if>
+			<if test="pictitle != null and pictitle != ''">
+				and pictitle = #{pictitle}
+			</if>
+			<if test="picpic != null and picpic != ''">
+				and picpic = #{picpic}
+			</if>
+			<if test="piccontent != null and piccontent != ''">
+				and piccontent = #{piccontent}
+			</if>
+		</trim>
+	</sql>
+
+	<!-- 插入记录 -->
+	<insert id="add" parameterType="Object" useGeneratedKeys="true"
+		keyProperty="id">
+		insert into
+		zk_en_factory(id,menu_id,proname,constructorunit,constructorsite,constructionscale,profinance,prostatus,mainpro,currorder,status,adduser,addtime,upduser,updtime,pic_src,content,picsrcs,assum,isprofile,pictitle,picpic,piccontent)
+		values(#{id},#{menu_id},#{proname},#{constructorunit},#{constructorsite},#{constructionscale},#{profinance},#{prostatus},#{mainpro},#{currorder},#{status},#{adduser},#{addtime},#{upduser},#{updtime},#{pic_src},#{content},#{picsrcs},#{assum},#{isprofile},#{pictitle},#{picpic},#{piccontent})
+	</insert>
+
+	<!-- 删除记录 -->
+	<delete id="delete" parameterType="Object">
+		delete from zk_en_factory
+		where id = #{id}
+	</delete>
+
+	<!-- 根据id，修改记录 -->
+	<update id="updateById" parameterType="Object">
+		update zk_en_factory set
+		menu_id=#{menu_id},proname=#{proname},constructorunit=#{constructorunit},constructorsite=#{constructorsite},constructionscale=#{constructionscale},profinance=#{profinance},prostatus=#{prostatus},mainpro=#{mainpro},currorder=#{currorder},status=#{status},adduser=#{adduser},addtime=#{addtime},upduser=#{upduser},updtime=#{updtime},pic_src=#{pic_src},content=#{content},picsrcs=#{picsrcs},assum=#{assum},isprofile=#{isprofile},pictitle=#{pictitle},picpic=#{picpic},piccontent=#{piccontent}
+		where id=#{id}
+	</update>
+
+	<!-- 修改记录，只修改只不为空的字段 -->
+	<update id="updateByObject" parameterType="Object">
+		update zk_en_factory set
+		<trim suffixOverrides=",">
+			<if test="menu_id != null  ">
+				menu_id=#{menu_id},
+			</if>
+			<if test="proname != null  ">
+				proname=#{proname},
+			</if>
+			<if test="constructorunit != null  ">
+				constructorunit=#{constructorunit},
+			</if>
+			<if test="constructorsite != null  ">
+				constructorsite=#{constructorsite},
+			</if>
+			<if test="constructionscale != null  ">
+				constructionscale=#{constructionscale},
+			</if>
+			<if test="profinance != null  ">
+				profinance=#{profinance},
+			</if>
+			<if test="prostatus != null  ">
+				prostatus=#{prostatus},
+			</if>
+			<if test="mainpro != null  ">
+				mainpro=#{mainpro},
+			</if>
+			<if test="currorder != null  ">
+				currorder=#{currorder},
+			</if>
+			<if test="status != null  ">
+				status=#{status},
+			</if>
+			<if test="adduser != null  ">
+				adduser=#{adduser},
+			</if>
+			<if test="addtime != null  ">
+				addtime=#{addtime},
+			</if>
+			<if test="upduser != null  ">
+				upduser=#{upduser},
+			</if>
+			<if test="updtime != null  ">
+				updtime=#{updtime},
+			</if>
+			<if test="pic_src != null  ">
+				pic_src=#{pic_src},
+			</if>
+			<if test="content != null  ">
+				content=#{content},
+			</if>
+			<if test="picsrcs != null  ">
+				picsrcs=#{picsrcs},
+			</if>
+			<if test="assum != null  ">
+				assum=#{assum},
+			</if>
+			<if test="isprofile != null  ">
+				isprofile=#{isprofile},
+			</if>
+			<if test="pictitle != null  ">
+				pictitle=#{pictitle},
+			</if>
+			<if test="picpic != null  ">
+				picpic=#{picpic},
+			</if>
+			<if test="piccontent != null  ">
+				piccontent=#{piccontent},
+			</if>
+		</trim>
+		where id=#{id}
+	</update>
+
+	<!-- 根据id查询单条记录 -->
+	<select id="queryById" resultMap="BaseResultMap" parameterType="Object">
+		select
+		<include refid="Base_Column_List" />
+		from zk_en_factory where id = #{id}
+	</select>
+
+	<!-- 根据非ID 字段查询单条记录 -->
+	<select id="queryByObject" resultMap="BaseResultMap"
+		parameterType="Object">
+		select
+		<include refid="Base_Column_List" />
+		from zk_en_factory
+		<include refid="Example_Where_Clause" />
+	</select>
+
+	<!-- 根据实体类对象查询列表 -->
+	<select id="queryListByObject" resultMap="BaseResultMap"
+		parameterType="Object">
+		select
+		<include refid="Base_Column_List" />
+		from zk_en_factory
+		<include refid="Example_Where_Clause" />
+		
+		order by currorder 
+		
+	</select>
+
+	<!-- 分页查询列表 -->
+	<select id="queryList4Page" resultMap="BaseResultMap"
+		parameterType="Object">
+		select
+		<include refid="Base_Column_List" />
+		from zk_en_factory
+		<include refid="Example_Where_Clause_Page" />
+		<choose>
+			<when test="page !=null and page.orderBy != null and page.orderBy != ''">
+				ORDER BY ${page.orderBy}
+			</when>
+			<otherwise>
+				ORDER BY id DESC
+			</otherwise>
+		</choose>
+	</select>
+
+	<!-- 查询记录数 -->
+	<select id="queryAmount" resultType="java.lang.Long"
+		parameterType="Object">
+		select count(1) from zk_en_factory
+		<include refid="Example_Where_Clause_Page" />
+	</select>
+
+	<!-- 查询所有记录 -->
+	<select id="queryAllList" resultMap="BaseResultMap"
+		parameterType="Object">
+		<!-- select -->
+		<!-- <include refid="Base_Column_List" /> -->
+		<!-- from zk_en_factory -->
+		<!-- where isprofile = 1 -->
+		<!-- order by currorder asc,id desc -->
+		select
+			fa.id,fa.menu_id,fa.proname,fa.constructorunit,fa.constructorsite,fa.constructionscale,fa.profinance,
+			fa.prostatus,fa.mainpro,fa.currorder,fa.pic_src,fa.isprofile,menu.functionname as menu_name
+		from zk_en_factory fa
+		left join zk_en_menu menu on fa.menu_id = menu.id
+		where fa.isprofile = 1
+		order by fa.currorder asc,fa.id desc
+	</select>
+
+	<!-- 查询-项目进展list -->
+	<select id="getProDebreifing" resultMap="BaseResultMap"
+		parameterType="Object">
+		select
+			fa.id,fa.menu_id,fa.proname,fa.constructorunit,fa.constructorsite,fa.constructionscale,fa.profinance,
+			fa.prostatus,fa.mainpro,fa.currorder,fa.pic_src,fa.isprofile
+			,fa.isProDebriefing,fa.proDebriefing,fa.proDebPic
+		from zk_zh_factory fa
+		where fa.isProDebriefing = 1
+	</select>
+
+</mapper>

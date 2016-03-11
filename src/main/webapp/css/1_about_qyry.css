@@ -1,0 +1,11 @@
+.body{width: 1180px; margin: 0 auto; margin-top: 40px; margin-bottom: 60px;}
+
+.body_1 span{font-size: 26px; color: #013b59; border-left: 6px solid #f39700; padding-left: 30px; font-weight: bold;}
+
+.body_2_text{font-size: 16px; color: #5b5b5b; width: 1152px; margin: 0 auto; line-height: 32px; margin-top: 40px;}
+.body_2_lunbo{margin-top: 38px; overflow: hidden; height: 196px;}
+.body_2_lunbo img{float: left; margin-top: 80px; cursor: pointer; width: 23px;}
+.body_2_lunbo .body_2_lunbo_out{float: left; overflow: hidden; width: 1112px; height: 196px; margin: 0 11px;}
+.body_2_lunbo_in{width: 10000px; height: 196px;}
+.body_2_lunbo .body_2_lunbo_out li{float: left; width: auto; height: 196px; padding-right: 12px;}
+.body_2_lunbo .body_2_lunbo_out li img{float: left; width: auto; height: 196px; margin-top: 0px; cursor: auto;}

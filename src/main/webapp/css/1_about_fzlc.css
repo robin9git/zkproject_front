@@ -1,0 +1,28 @@
+.body{width: 1180px; margin: 0 auto; margin-top: 40px;}
+.body1 h1{ font-size: 26px; color: #013b59; font-weight: bold; padding-left: 34px; border-left: 6px solid #f39700;}
+.body1 p{font-size: 20px; color: #282828; margin-left: 40px; margin-top: 10px;}
+
+.body2{margin-top: 40px; overflow: hidden; margin-bottom: 50px;}
+.body2_title{height: 45px; width: 100%; background-color: #f39700;}
+.body2_title_l_out{float: left; cursor: pointer; width: 135px; text-align: center; height: 45px;}
+.body2_title_l{display: block; margin-top: 9px; margin-left: 59px;}
+.body2_title_r_out{float: right; cursor: pointer; width: 135px; text-align: center; height: 45px;}
+.body2_title_r{display: block; margin-top: 9px; margin-left: 59px;}
+.body2_title_out{width: 909px; height: 45px; overflow: hidden; float: left;}
+.body2_title_in{width: 9000px; height: 45px;overflow: hidden;}
+.body2_title_in li{float: left; height: 45px; width: 129px; cursor: pointer; font-size: 18px; color: #fff; line-height: 45px; text-align: center; padding-left: 1px; background: url(../imgs/1_about/body2_title_fff_20.jpg) no-repeat left center;}
+/*.body2_title_in li:first-child{background: none;}*/
+.body2_title_in .body2_title_cur{background-color: #fff; color: #013b59;}
+.body2_title_in .body2_title_cur_next{background-image: none;}
+
+.body2_box{margin-top: 40px;}
+.body2_box_li{overflow: hidden; display: none;}
+.body2_box_li:first-child{display: block;}
+.body2_box_li img{float: left; width: 395px; height: 269px;}
+.body2_r_li_year_show{margin-left: 27px; width: 745px; float: right;}
+.body2_r_li_year_show ul{ padding-bottom: 13px; width: 745px}
+.body2_r_li_year_show ul li{overflow: hidden; font-size: 14px; color: #666; line-height: 28px;}
+.body2_r_li_year_show ul li span{width: 110px; float: left; padding-left: 14px; background: url(../imgs/1_about/qyry_tubiao3.jpg) no-repeat left center;}
+.body2_r_li_year_show ul li p{float: left; margin-left: 20px; width: 600px;}
+
+

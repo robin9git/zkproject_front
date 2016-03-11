@@ -1,0 +1,243 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.rgi.zkhcy.front.module.dao.ZkAttachmentDao">
+	<cache eviction="FIFO" flushInterval="60000" size="1024"
+		readOnly="true" />
+	<!-- Result Map -->
+	<resultMap id="BaseResultMap"
+		type="com.rgi.zkhcy.front.common.bean.dataBean.ZkAttachmentData">
+		<result column="id" property="id" />
+		<result column="year" property="year" />
+		<result column="title1" property="title1" />
+		<result column="title2" property="title2" />
+		<result column="picsrc" property="picsrc" />
+		<result column="filesrc" property="filesrc" />
+		<result column="des" property="des" />
+		<result column="filesize" property="filesize" />
+		<result column="filstype" property="filstype" />
+		<result column="conOrder" property="conOrder" />
+	</resultMap>
+
+	<!-- zk_zh_attachment table all fields -->
+	<sql id="Base_Column_List">
+		id,menu,year,title1,title2,picsrc,filesrc,des,creatdate,filesize,filstype
+	</sql>
+
+	<!-- 查询条件 -->
+	<sql id="Example_Where_Clause">
+		where 1=1
+		<trim suffixOverrides=",">
+			<if test="id != null and id != ''">
+				and id = #{id}
+			</if>
+			<if test="menu != null and menu != ''">
+				and menu = #{menu}
+			</if>
+			<if test="year != null and year != ''">
+				and year = #{year}
+			</if>
+			<if test="title1 != null and title1 != ''">
+				and title1 = #{title1}
+			</if>
+			<if test="title2 != null and title2 != ''">
+				and title2 = #{title2}
+			</if>
+			<if test="picsrc != null and picsrc != ''">
+				and picsrc = #{picsrc}
+			</if>
+			<if test="filesrc != null and filesrc != ''">
+				and filesrc = #{filesrc}
+			</if>
+			<if test="des != null and des != ''">
+				and des = #{des}
+			</if>
+			<if test="creatdate != null and creatdate != ''">
+				and creatdate = #{creatdate}
+			</if>
+			<if test="filesize != null and filesize != ''">
+				and filesize = #{filesize}
+			</if>
+			<if test="filstype != null and filstype != ''">
+				and filstype = #{filstype}
+			</if>
+		</trim>
+	</sql>
+
+	<!-- 分页查询条件 -->
+	<sql id="Example_Where_Clause_Page">
+		where 1=1
+		<trim suffixOverrides=",">
+			<if test="id != null and id != ''">
+				and id = #{id}
+			</if>
+			<if test="menu != null and menu != ''">
+				and menu = #{menu}
+			</if>
+			<if test="year != null and year != ''">
+				and year = #{year}
+			</if>
+			<if test="title1 != null and title1 != ''">
+				and title1 = #{title1}
+			</if>
+			<if test="title2 != null and title2 != ''">
+				and title2 = #{title2}
+			</if>
+			<if test="picsrc != null and picsrc != ''">
+				and picsrc = #{picsrc}
+			</if>
+			<if test="filesrc != null and filesrc != ''">
+				and filesrc = #{filesrc}
+			</if>
+			<if test="des != null and des != ''">
+				and des = #{des}
+			</if>
+			<if test="creatdate != null and creatdate != ''">
+				and creatdate = #{creatdate}
+			</if>
+			<if test="filesize != null and filesize != ''">
+				and filesize = #{filesize}
+			</if>
+			<if test="filstype != null and filstype != ''">
+				and filstype = #{filstype}
+			</if>
+		</trim>
+	</sql>
+
+	<!-- 插入记录 -->
+	<insert id="add" parameterType="Object" useGeneratedKeys="true"
+		keyProperty="id">
+		insert into
+		zk_zh_attachment(menu,year,title1,title2,picsrc,filesrc,des,creatdate,filesize,filstype)
+		values(#{menu},#{year},#{title1},#{title2},#{picsrc},#{filesrc},#{des},#{creatdate},#{filesize},#{filstype})
+	</insert>
+
+	<!-- 删除记录 -->
+	<delete id="delete" parameterType="Object">
+		delete from zk_zh_attachment
+		where id = #{id}
+	</delete>
+
+	<!-- 根据id，修改记录 -->
+	<update id="updateById" parameterType="Object">
+		update zk_zh_attachment set
+		menu=#{menu},year=#{year},title1=#{title1},title2=#{title2},picsrc=#{picsrc},filesrc=#{filesrc},des=#{des},creatdate=#{creatdate},filesize=#{filesize},filstype=#{filstype}
+		where id=#{id}
+	</update>
+
+	<!-- 修改记录，只修改只不为空的字段 -->
+	<update id="updateByObject" parameterType="Object">
+		update zk_zh_attachment set
+		<trim suffixOverrides=",">
+			<if test="menu != null  ">
+				menu=#{menu},
+			</if>
+			<if test="year != null  ">
+				year=#{year},
+			</if>
+			<if test="title1 != null  ">
+				title1=#{title1},
+			</if>
+			<if test="title2 != null  ">
+				title2=#{title2},
+			</if>
+			<if test="picsrc != null  ">
+				picsrc=#{picsrc},
+			</if>
+			<if test="filesrc != null  ">
+				filesrc=#{filesrc},
+			</if>
+			<if test="des != null  ">
+				des=#{des},
+			</if>
+			<if test="creatdate != null  ">
+				creatdate=#{creatdate},
+			</if>
+			<if test="filesize != null  ">
+				filesize=#{filesize},
+			</if>
+			<if test="filstype != null  ">
+				filstype=#{filstype},
+			</if>
+		</trim>
+		where id=#{id}
+	</update>
+
+	<!-- 根据id查询单条记录 -->
+	<select id="queryById" resultMap="BaseResultMap" parameterType="Object">
+		select
+		<include refid="Base_Column_List" />
+		from zk_zh_attachment where id = #{id}
+	</select>
+
+	<!-- 根据非ID 字段查询单条记录 -->
+	<select id="queryByObject" resultMap="BaseResultMap"
+		parameterType="Object">
+		select
+		<include refid="Base_Column_List" />
+		from zk_zh_attachment
+		<include refid="Example_Where_Clause" />
+	</select>
+
+	<!-- 根据实体类对象查询列表 -->
+	<select id="queryListByObject" resultMap="BaseResultMap"
+		parameterType="Object">
+		select
+		<include refid="Base_Column_List" />
+		from zk_zh_attachment
+		<include refid="Example_Where_Clause" />
+		ORDER BY year DESC,conOrder ASC
+	</select>
+
+
+
+
+	<resultMap id="ResultMap"
+		type="com.rgi.zkhcy.front.common.bean.dataBean.ZkAttachmentData">
+		<result column="id" property="id" />
+		<result column="year" property="year" />
+	</resultMap>
+	<select id="queryByMenu" resultMap="ResultMap">
+		SELECT id,`year` from
+		zk_zh_attachment where menu=1 group by `year` ORDER BY `year` desc
+	</select>
+
+	<select id="queryDateByMenu" resultMap="ResultMap"
+		parameterType="Object">
+		SELECT id,`year` from zk_zh_attachment where menu= #{menu}
+		group by `year` ORDER BY `year` desc
+	</select>
+
+	<!-- 分页查询列表 -->
+	<select id="queryList4Page" resultMap="BaseResultMap"
+		parameterType="Object">
+		select
+		<include refid="Base_Column_List" />
+		from zk_zh_attachment
+		<include refid="Example_Where_Clause_Page" />
+		<choose>
+			<when test="page !=null and page.orderBy != null and page.orderBy != ''">
+				ORDER BY ${page.orderBy}
+			</when>
+			<otherwise>
+				ORDER BY id DESC
+			</otherwise>
+		</choose>
+	</select>
+
+	<!-- 查询记录数 -->
+	<select id="queryAmount" resultType="java.lang.Long"
+		parameterType="Object">
+		select count(1) from zk_zh_attachment
+		<include refid="Example_Where_Clause_Page" />
+	</select>
+
+	<!-- 查询所有记录 -->
+	<select id="queryAllList" resultMap="BaseResultMap"
+		parameterType="Object">
+		select
+		<include refid="Base_Column_List" />
+		from zk_zh_attachment
+		order by id desc
+	</select>
+
+</mapper>
